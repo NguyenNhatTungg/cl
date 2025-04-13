@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>WebRTC Video Call</title>
+  <style>
+    body {
+      background: #111;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      color: white;
+      font-family: sans-serif;
+    }
+
+    video {
+      width: 45%;
+      border: 2px solid #fff;
+      border-radius: 10px;
+      margin: 10px;
+    }
+
+    .video-container {
+      display: flex;
+      justify-content: space-around;
+      width: 100%;
+    }
+
+    .controls {
+      margin: 20px;
+    }
+
+    input, button {
+      padding: 10px;
+      margin: 5px;
+    }
+  </style>
+</head>
+<body>
+  <h1>WebRTC Video Call</h1>
+
+  <div class="video-container">
+    <video id="localVideo" autoplay muted></video>
+    <video id="remoteVideo" autoplay></video>
+  </div>
+
+  <div class="controls">
+    <input type="text" id="targetId" placeholder="Nhập user muốn gọi" />
+    <button onclick="call()">📞 Gọi</button>
+    <button onclick="end()">❌ Kết thúc</button>
+  </div>
+
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="/js/call.js"></script>
+</body>
+</html>
